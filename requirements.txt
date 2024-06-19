@@ -1,0 +1,8 @@
+lazypredict
+numpy
+pandas
+matplotlib
+seaborn
+imblearn
+scikit-learn
+xgboost
