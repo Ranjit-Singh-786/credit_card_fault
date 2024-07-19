@@ -1,12 +1,13 @@
 import numpy as np
 from flask import Flask, request, jsonify, render_template
-import pickle
+import joblib
 
 app = Flask(__name__)
 # prediction function 
 def ValuePredictor(to_predict_list): 
+    # return 1
     to_predict = np.array(to_predict_list).reshape(1, 7) 
-    loaded_model = pickle.load(open("model2.pkl", "rb")) 
+    loaded_model = joblib.load('models\XGBClassifier.lb') 
     result = loaded_model.predict(to_predict) 
     return result[0]     
     
